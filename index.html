@@ -658,7 +658,7 @@ function buildTherapistSummary(mk){
 buildAll();
 // activate first tab
 document.getElementById(`mp-${MORDER[0]}`).classList.add('on');
-document.querySelector('.mtab').classList.add('on');
+document.getElementById('mtabs').innerHTML = MORDER.map((mk,idx)=>`<button class="mtab${idx===0?' on':''}" onclick="switchMonth('${mk}',this)">${DATA[mk]?DATA[mk].label:mk}</button>`).join('');
 setTimeout(()=>renderOverview(MORDER[0]),120);
 
 /* ────── JUN69 SPECIAL: Therapist × Course × Weekly ────── */
